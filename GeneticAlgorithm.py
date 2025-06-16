@@ -13,7 +13,6 @@ import tracemalloc
 
 
 def count_attacks(board):
-    """Count number of attacking queen pairs."""
     n = len(board)
     attacks = 0
     for i in range(n):
@@ -23,13 +22,11 @@ def count_attacks(board):
     return attacks
 
 def generate_board(n):
-    """Generate a random board (one queen per row, unique column)."""
     board = list(range(n))
     random.shuffle(board)
     return board
 
 def crossover(parent1, parent2):
-    """Partially Mapped Crossover (PMX-like) to keep column uniqueness."""
     n = len(parent1)
     start = random.randint(0, n - 2)
     end = random.randint(start + 1, n - 1)
@@ -45,14 +42,12 @@ def crossover(parent1, parent2):
     return child
 
 def mutate(board, mutation_rate):
-    """Swap two positions with given probability."""
     n = len(board)
     if random.random() < mutation_rate:
         i, j = random.sample(range(n), 2)
         board[i], board[j] = board[j], board[i]
 
 def select_parents(population, fitnesses, elite_size):
-    """Select parents using elitism and roulette-wheel selection."""
     sorted_indices = sorted(range(len(fitnesses)), key=lambda i: fitnesses[i])
     elite = [population[i] for i in sorted_indices[:elite_size]]
     total_fitness = sum(fitnesses)
@@ -62,7 +57,6 @@ def select_parents(population, fitnesses, elite_size):
     return elite + selected
 
 def solve_n_queens_genetic(n, population_size=100, generations=1000, mutation_rate=0.01, elite_size=20):
-    """Solve N-Queens using a Genetic Algorithm."""
     tracemalloc.start()
     start_time = time.time()
 

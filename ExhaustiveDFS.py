@@ -11,7 +11,6 @@ import tracemalloc
 
 
 def is_safe(queens, row, col):
-    """Check if placing a queen at (row, col) is safe."""
     for r in range(row):
         c = queens[r]
         if c == col or abs(c - col) == abs(r - row):
@@ -19,7 +18,6 @@ def is_safe(queens, row, col):
     return True
 
 def dfs(n, row=0, queens=None, solutions=None):
-    """Recursive DFS to find all valid queen placements."""
     if queens is None:
         queens = []
     if solutions is None:
@@ -36,7 +34,6 @@ def dfs(n, row=0, queens=None, solutions=None):
             queens.pop()
 
 def solve_n_queens_dfs(n):
-    """Wrapper to run DFS and measure performance."""
     tracemalloc.start()
     start_time = time.time()
 
