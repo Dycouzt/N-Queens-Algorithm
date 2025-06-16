@@ -9,7 +9,6 @@ import time
 import tracemalloc
 
 def count_attacks(board):
-    """Count number of attacking queen pairs."""
     n = len(board)
     attacks = 0
     for i in range(n):
@@ -19,7 +18,6 @@ def count_attacks(board):
     return attacks
 
 def random_neighbor(board):
-    """Generate a random neighboring board."""
     n = len(board)
     new_board = board[:]
     row = random.randint(0, n - 1)
@@ -30,7 +28,6 @@ def random_neighbor(board):
     return new_board
 
 def solve_n_queens_simulated_annealing(n, temperature=100.0, cooling_rate=0.99, max_steps=100000):
-    """Solve N-Queens using Simulated Annealing."""
     tracemalloc.start()
     start_time = time.time()
 
