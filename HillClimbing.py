@@ -10,7 +10,6 @@ import tracemalloc
 
 
 def count_attacks(board):
-    """Count number of attacking queen pairs."""
     n = len(board)
     attacks = 0
     for i in range(n):
@@ -20,7 +19,6 @@ def count_attacks(board):
     return attacks
 
 def get_best_neighbor(board):
-    """Generate best neighbor with fewer conflicts."""
     n = len(board)
     best_board = board[:]
     min_attacks = count_attacks(board)
@@ -40,7 +38,6 @@ def get_best_neighbor(board):
     return best_board, min_attacks
 
 def solve_n_queens_hill_climbing(n, max_restarts=100):
-    """Solve N-Queens using Hill Climbing with random restarts."""
     tracemalloc.start()
     start_time = time.time()
 
