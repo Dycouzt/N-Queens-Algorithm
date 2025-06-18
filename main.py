@@ -31,12 +31,3 @@ for n in Ns:
     run_and_record("Hill Climbing", solve_n_queens_hill_climbing, n)
     run_and_record("Simulated Annealing", solve_n_queens_simulated_annealing, n)
     run_and_record("Genetic Algorithm", solve_n_queens_genetic, n)
-
-# Write results to CSV
-csv_file = "n_queens_comparison_results.csv"
-with open(csv_file, mode="w", newline="") as file:
-    writer = csv.DictWriter(file, fieldnames=results[0].keys())
-    writer.writeheader()
-    writer.writerows(results)
-
-print(f"\nComparison complete. Results saved to '{csv_file}'.")
