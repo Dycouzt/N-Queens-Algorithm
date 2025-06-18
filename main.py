@@ -1,3 +1,6 @@
+"""
+This is the main.py script that makes a simple and quick comparison of all the algorithms.
+"""
 from ExhaustiveDFS import solve_n_queens_dfs
 from HillClimbing import solve_n_queens_hill_climbing
 from SimulatedAnnealing import solve_n_queens_simulated_annealing
